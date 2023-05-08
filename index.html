@@ -1,24 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <title>Text Tone Analyzer</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speech-to-Text Tone Analyzer</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 
 <body>
-    <h1>Text Tone Analyzer</h1>
-    <div class="input-container">
-        <label for="input-text">Enter your text here:</label>
-        <textarea id="input-text"></textarea>
-        <button id="analyze-btn">Analyze</button>
+    <div class="input-container ">
+        <h1>Speech-to-Text Tone Analyzer</h1>
+        <textarea id="convert-text" cols="30" rows="10"></textarea>
+        <div class="btn-container">
+            <button class="btn" id="voice-text">Voice To Text</button>
+            <button class="btn" id="analyze-btn">Analyze</button>
+        </div>
+        <div id="result-container" class="hidden">
+            <p>Your text sentiment score:</p>
+            <p id="result-score"></p>
+        </div>
     </div>
-    <div id="result-container" class="hidden">
-        <p>Your text sentiment score:</p>
-        <p id="result-score"></p>
-    </div>
-    <script src="main.js"></script>
+
 </body>
 
 </html>

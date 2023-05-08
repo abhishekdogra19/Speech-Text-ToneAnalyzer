@@ -1,10 +1,30 @@
-const inputText = document.getElementById("input-text");
+const btnEl = document.getElementById("voice-text");
+const textEl = document.getElementById("convert-text");
 const analyzeBtn = document.getElementById("analyze-btn");
 const resultScore = document.getElementById("result-score");
 const resultContainer = document.getElementById("result-container");
 
+function converter() {
+  var speech = true;
+  window.SpeechRecognition = window.webkitSpeechRecognition;
+  const recognition = new SpeechRecognition();
+  recognition.interimResults = true;
+
+  recognition.addEventListener("result", (e) => {
+    const transcript = Array.from(e.results)
+      .map((result) => result[0])
+      .map((result) => result.transcript);
+
+    textEl.innerHTML = transcript;
+  });
+
+  if (speech == true) {
+    recognition.start();
+  }
+}
+
 analyzeBtn.addEventListener("click", () => {
-  const text = inputText.value;
+  const text = textEl.value;
   const apiKey = "8a3509aec27d9e9c5218b42af59210f7";
 
   fetch(
@@ -28,3 +48,5 @@ analyzeBtn.addEventListener("click", () => {
     })
     .catch((error) => console.log(error));
 });
+
+btnEl.addEventListener("click", converter);

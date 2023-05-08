@@ -7,32 +7,31 @@ body {
   background-color: #f8f8f8;
   font-family: Arial, sans-serif;
 }
-
 h1 {
   text-align: center;
   color: #00539f;
   margin-top: 50px;
 }
-
 .input-container {
   margin: 50px auto;
   max-width: 600px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
-
 label {
   font-size: 1.2em;
   margin-bottom: 10px;
 }
 
 textarea {
+  margin: 50px 0;
   height: 150px;
   width: 100%;
   padding: 10px;
   border-radius: 5px;
-  border: none;
+  border: 1px solid black;
   box-shadow: 0 0 5px #ccc;
   resize: none;
 }
@@ -46,7 +45,7 @@ button {
   border-radius: 5px;
   box-shadow: 0 0 5px #ccc;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: 0.3s ease;
 }
 
 button:hover {
@@ -58,8 +57,8 @@ button:hover {
 }
 
 #result-container {
-  margin: 0 auto;
-  max-width: 600px;
+  margin: 20px auto;
+  width: 600px;
   text-align: center;
   padding: 50px;
   background-color: #fff;
